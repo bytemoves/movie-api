@@ -115,10 +115,10 @@ func (app *application) readJSON(w http.ResponseWriter, r *http.Request, dst any
 }
 
 
-func(app *application) badRequestResponse (w http.ResponseWriter, r *http.Request,err error) {
-	app.errorResponse(w,r,http.StatusBadRequest,err.Error())
+//func(app *application) badRequestResponse (w http.ResponseWriter, r *http.Request,err error) {
+	//app.errorResponse(w,r,http.StatusBadRequest,err.Error())
 
-}
+//}
 
 
 

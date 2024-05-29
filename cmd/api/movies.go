@@ -1,7 +1,7 @@
 package main
 
 import (
-	"encoding/json"
+	
 	"fmt"
 	"greenlight/bytemoves/internal/data"
 	"net/http"
@@ -20,13 +20,13 @@ func(app *application) createMovieHandler(w http.ResponseWriter, r *http.Request
 
 	}
 
-	// 
-	err := json.NewDecoder(r.Body).Decode(&input)
-	if err != nil {
-		app.errorResponse(w,r, http.StatusBadRequest,err.Error())
-		return
-	}
 	
+	err := app.readJSON(w, r, &input)
+    if err != nil {
+		//using badreq helper
+        app.badRequestResponse(w, r, err)
+        return
+    }
 
     fmt.Fprintf(w, "%+v\n", input)
 	
