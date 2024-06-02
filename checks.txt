@@ -1,0 +1,20 @@
+postgres:x:109:119:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+
+
+creating db 
+
+postgres=# CREATE DATABASE greenlight;
+CREATE DATABASE
+postgres=# \c greenlight --->> enter to the db ig
+You are now connected to database "greenlight" as user "postgres".
+greenlight=#
+
+
+\l list all db\dt list tables
+
+
+greenlight=# CREATE ROLE greenlight WITH LOGIN PASSWORD 'pa55word';
+CREATE ROLE
+greenlight=# CREATE EXTENSION IF NOT EXISTS citext;
+CREATE EXTENSION
+
